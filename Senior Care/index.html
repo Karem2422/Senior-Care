@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Senior Care - Improving Healthcare</title>
+  <script src="assets/js/tailwindcss.js"></script>
+  <link href="assets/css/alexandria.css" rel="stylesheet" />
+  <link href="assets/css/material-symbols.css" rel="stylesheet" />
+  <style type="text/tailwindcss">:root {
+            --primary-blue: #42a09f;
+            --soft-blue: #f0fbfb;
+            --dark-blue: #1d5b5b;
+            --text-gray: #475569;
+            --white: #fff;
+        }
+body {
+    font-family: "Alexandria", sans-serif;
+    color: var(--text-gray);
+    background-color: #f8fafc
+    }
+.hero-bg {
+    background-image: linear-gradient(rgba(29, 91, 91, 0.8), rgba(66, 160, 159, 0.7)), url(assets/images/image-46f7100127.jpg);
+    background-size: cover;
+    background-position: center
+    }</style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a class="flex items-center gap-2 text-[var(--dark-blue)] font-bold text-2xl tracking-tight" href="index.html">
+        <img src="Senior Care Logo.svg" alt="Senior Care Logo" class="h-10 w-auto" />
+        Senior Care
+      </a>
+      <nav class="hidden md:flex gap-8">
+        <a class="text-slate-600 hover:text-[var(--primary-blue)] font-medium transition-colors"
+          href="index.html">About Us</a>
+        <a class="text-slate-600 hover:text-[var(--primary-blue)] font-medium transition-colors"
+          href="products.html">Our Work</a>
+        <a class="text-slate-600 hover:text-[var(--primary-blue)] font-medium transition-colors"
+          href="our_team.html">Team</a>
+        <a class="text-slate-600 hover:text-[var(--primary-blue)] font-medium transition-colors"
+          href="social_responsibility.html">CSR</a>
+      </nav>
+      <button class="md:hidden text-slate-600 focus:outline-none">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </header>
+  <section class="hero-bg text-white py-32 md:py-48 relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10 text-center md:text-left">
+      <div class="max-w-3xl">
+        <span
+          class="inline-block py-1 px-3 rounded-full bg-[var(--primary-blue)]/20 border border-[var(--primary-blue)]/30 text-sky-100 text-sm font-medium mb-4 backdrop-blur-sm">
+          Trusted Healthcare Partner
+        </span>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          Improving Yemen's <br /> Healthcare Standards
+        </h1>
+        <p class="text-lg md:text-xl text-sky-100 mb-8 max-w-2xl leading-relaxed">
+          Senior Care is a trusted provider of pharmaceuticals and advanced medical equipment, committed to delivering
+          quality products to hospitals, clinics, and pharmacies nationwide.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a class="px-8 py-3 bg-[var(--primary-blue)] hover:bg-[#358281] text-white font-semibold rounded-full transition-all shadow-lg shadow-[#42a09f]/30 flex items-center justify-center gap-2"
+            href="#offerings">
+            Explore Offerings
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+          <a class="px-8 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full border border-white/30 backdrop-blur-md transition-all flex items-center justify-center"
+            href="#contact">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="relative -mt-24 z-20 px-6 mb-20" id="offerings">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div
+          class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow border-t-4 border-[var(--primary-blue)] flex flex-col items-center text-center">
+          <div
+            class="w-16 h-16 bg-[var(--soft-blue)] rounded-full flex items-center justify-center mb-6 text-[var(--primary-blue)]">
+            <span class="material-symbols-outlined text-3xl">pill</span>
+          </div>
+          <h3 class="text-xl font-bold text-[var(--dark-blue)] mb-3">Pharmaceuticals</h3>
+          <p class="text-slate-500 leading-relaxed">Essential medicines across key therapeutic areas, ensuring
+            consistent access to effective treatments.</p>
+        </div>
+        <div
+          class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow border-t-4 border-[var(--primary-blue)] flex flex-col items-center text-center">
+          <div
+            class="w-16 h-16 bg-[var(--soft-blue)] rounded-full flex items-center justify-center mb-6 text-[var(--primary-blue)]">
+            <span class="material-symbols-outlined text-3xl">monitor_heart</span>
+          </div>
+          <h3 class="text-xl font-bold text-[var(--dark-blue)] mb-3">Medical Devices</h3>
+          <p class="text-slate-500 leading-relaxed">Advanced diagnostic tools, surgical instruments, and innovative
+            technologies for better patient care.</p>
+        </div>
+        <div
+          class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow border-t-4 border-[var(--primary-blue)] flex flex-col items-center text-center">
+          <div
+            class="w-16 h-16 bg-[var(--soft-blue)] rounded-full flex items-center justify-center mb-6 text-[var(--primary-blue)]">
+            <span class="material-symbols-outlined text-3xl">local_hospital</span>
+          </div>
+          <h3 class="text-xl font-bold text-[var(--dark-blue)] mb-3">Hospital Solutions</h3>
+          <p class="text-slate-500 leading-relaxed">Comprehensive infrastructure solutions and technical support
+            designed to modernize medical facilities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2 relative">
+          <div class="absolute -top-4 -left-4 w-24 h-24 bg-[var(--soft-blue)] rounded-full -z-10 opacity-50"></div>
+          <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-[var(--primary-blue)] rounded-full -z-10 opacity-10">
+          </div>
+          <img alt="Doctor Consultation" class="rounded-3xl shadow-lg w-full object-cover h-[400px]"
+            src="assets/images/image-d1f39a1ce6.jpg" />
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-sm font-bold tracking-widest text-[var(--primary-blue)] uppercase mb-2">Our Foundation</h2>
+          <h3 class="text-3xl font-bold text-[var(--dark-blue)] mb-6">Built on Medical Expertise &amp; Integrity</h3>
+          <p class="text-slate-600 mb-6 leading-relaxed">
+            Founded in 2023 by <strong class="text-[var(--dark-blue)]">Dr. Khaled Swailem</strong>, an orthopedic
+            specialist with deep experience in Yemen’s healthcare sector. Under his leadership, Senior Care has grown
+            into a pillar of reliability.
+          </p>
+          <p class="text-slate-600 mb-8 leading-relaxed">
+            We partner with reputable international manufacturers and uphold strict quality standards. Guided by Dr.
+            Swailem’s medical insight, we build long-term relationships, provide technical training, and support
+            healthcare providers to improve patient outcomes.
+          </p>
+          <div class="p-6 bg-[var(--soft-blue)] rounded-xl border border-sky-200 relative">
+            <span
+              class="material-symbols-outlined text-4xl text-[var(--primary-blue)] absolute -top-5 left-8 bg-white p-1 rounded-full">format_quote</span>
+            <p class="italic text-[var(--dark-blue)] pt-2 font-medium">"At Senior Care, we are dedicated to making a
+              positive impact on the health and well-being of the people."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-20 bg-slate-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-[var(--dark-blue)]">Our Mission &amp; Values</h2>
+        <div class="w-20 h-1 bg-[var(--primary-blue)] mx-auto mt-4 rounded-full"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="material-symbols-outlined text-[var(--primary-blue)] text-3xl">visibility</span>
+            <h3 class="text-xl font-bold text-[var(--dark-blue)]">Vision</h3>
+          </div>
+          <p class="text-slate-600">To become Yemen’s most trusted pharmaceutical provider through innovation,
+            efficiency, and integrity.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="material-symbols-outlined text-[var(--primary-blue)] text-3xl">flag</span>
+            <h3 class="text-xl font-bold text-[var(--dark-blue)]">Mission</h3>
+          </div>
+          <p class="text-slate-600">To improve public health by offering consistent access to effective medicines
+            through a robust network and global partnerships.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all md:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="material-symbols-outlined text-[var(--primary-blue)] text-3xl">diamond</span>
+            <h3 class="text-xl font-bold text-[var(--dark-blue)]">Core Values</h3>
+          </div>
+          <ul class="space-y-2 text-slate-600">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-sky-400 rounded-full"></span> Quality &amp;
+              Compliance</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-sky-400 rounded-full"></span> Trust &amp;
+              Transparency</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-sky-400 rounded-full"></span>
+              Customer-Centric Service</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-sky-400 rounded-full"></span> Innovation
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div
+        class="bg-[var(--dark-blue)] rounded-3xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-10 overflow-hidden relative">
+        <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-white opacity-5 rounded-full pointer-events-none">
+        </div>
+        <div
+          class="absolute bottom-0 left-0 -ml-16 -mb-16 w-48 h-48 bg-[var(--primary-blue)] opacity-10 rounded-full pointer-events-none">
+        </div>
+        <div class="md:w-1/2 z-10">
+          <h2 class="text-3xl font-bold mb-6">Business <span class="text-[var(--primary-blue)]">Scope</span></h2>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-[var(--primary-blue)] mt-0.5">check_circle</span>
+              <span>Distribution to pharmacies, clinics, and hospitals nationwide.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-[var(--primary-blue)] mt-0.5">check_circle</span>
+              <span>Regulatory registration and strict compliance adherence.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-[var(--primary-blue)] mt-0.5">check_circle</span>
+              <span>Cold-chain logistics and secure warehousing.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-[var(--primary-blue)] mt-0.5">check_circle</span>
+              <span>Medical marketing and professional educational support.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="md:w-1/3 z-10 flex justify-center">
+          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 text-center">
+            <span class="text-4xl font-bold text-[var(--soft-blue)] block mb-2">2023</span>
+            <span class="text-sm text-sky-200">Year Founded</span>
+            <div class="w-full h-px bg-white/20 my-4"></div>
+            <span class="text-4xl font-bold text-[var(--soft-blue)] block mb-2">100%</span>
+            <span class="text-sm text-sky-200">Commitment to Quality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-slate-800" id="contact">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div>
+          <div class="flex items-center gap-2 text-white font-bold text-xl mb-6">
+            <img src="Senior Care Logo.svg" alt="Senior Care Logo" class="h-8 w-auto" />
+            Senior Care
+          </div>
+          <p class="text-sm leading-relaxed mb-6 text-slate-400">
+            Dedicated to raising healthcare standards by delivering quality products and advanced medical technologies
+            across Yemen.
+          </p>
+          <div class="flex gap-4">
+            <a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary-blue)] transition-colors text-white"
+              href="#">
+              <span class="font-bold text-xs">FB</span>
+            </a>
+            <a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary-blue)] transition-colors text-white"
+              href="#">
+              <span class="font-bold text-xs">LI</span>
+            </a>
+            <a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary-blue)] transition-colors text-white"
+              href="#">
+              <span class="font-bold text-xs">X</span>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a class="hover:text-[var(--primary-blue)] transition-colors" href="index.html">About Us</a></li>
+            <li><a class="hover:text-[var(--primary-blue)] transition-colors" href="products.html">Our Work</a></li>
+            <li><a class="hover:text-[var(--primary-blue)] transition-colors" href="our_team.html">Our Team</a></li>
+            <li><a class="hover:text-[var(--primary-blue)] transition-colors" href="social_responsibility.html">CSR</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6">Contact Us</h4>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-[var(--primary-blue)] text-lg">location_on</span>
+              <span>22 May street,<br />Sanaa, Yemen</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-[var(--primary-blue)] text-lg">call</span>
+              <span>+967 773 557 006</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-[var(--primary-blue)] text-lg">mail</span>
+              <a class="hover:text-white transition-colors"
+                href="mailto:info@seniorcare-ye.com">info@seniorcare-ye.com</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-6">Stay Updated</h4>
+          <p class="text-sm text-slate-400 mb-4">Subscribe to receive updates about our new products and initiatives.
+          </p>
+          <form class="flex gap-2">
+            <input
+              class="bg-slate-800 border-none rounded text-sm px-3 py-2 w-full focus:ring-1 focus:ring-[var(--primary-blue)]"
+              placeholder="Your email" type="email" />
+            <button class="bg-[var(--primary-blue)] text-white px-3 py-2 rounded hover:bg-sky-600 transition-colors">
+              <span class="material-symbols-outlined text-sm">send</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
+        <p>© 2025 Senior Care. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

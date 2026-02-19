@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pharmaceutical Product Catalog - Senior Care Meds</title>
+    <script src="assets/js/tailwindcss.js"></script>
+    <link href="assets/css/alexandria.css" rel="stylesheet" />
+    <link href="assets/css/material-symbols.css" rel="stylesheet" />
+    <style type="text/tailwindcss">
+        :root {
+            --primary-blue: #42a09f;
+            --soft-blue: #f0fbfb;
+            --dark-blue: #1d5b5b;
+            --text-gray: #475569;
+            --white: #fff;
+        }
+        body {
+            font-family: "Alexandria", sans-serif;
+            color: var(--text-gray);
+            background-color: #f8fafc;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#42a09f", // var(--primary-blue)
+                        secondary: "#f0fbfb", // var(--soft-blue)
+                        dark: "#1d5b5b", // var(--dark-blue)
+                        "background-light": "#f8fafc",
+                        "surface-light": "#ffffff",
+                        "background-dark": "#f8fafc",
+                        "surface-dark": "#ffffff",
+                        "primary-dark": "#358281",
+                    },
+                    fontFamily: {
+                        sans: ["Alexandria", "sans-serif"],
+                        display: ["Alexandria", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="flex flex-col min-h-screen">
+    <!-- Top Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a class="flex items-center gap-2 text-[var(--dark-blue)] font-bold text-2xl tracking-tight"
+                href="index.html">
+                <img src="Senior Care Logo.svg" alt="Senior Care Logo" class="h-10 w-auto" />
+                Senior Care
+            </a>
+            <nav class="hidden md:flex gap-8">
+                <a class="text-slate-600 hover:text-[var(--primary-blue)] font-medium transition-colors"
+                    href="index.html">About Us</a>
+                <a class="text-slate-600 hover:text-[var(--primary-blue)] font-medium transition-colors"
+                    href="products.html">Our Work</a>
+                <a class="text-slate-600 hover:text-[var(--primary-blue)] font-medium transition-colors"
+                    href="our_team.html">Team</a>
+                <a class="text-slate-600 hover:text-[var(--primary-blue)] font-medium transition-colors"
+                    href="social_responsibility.html">CSR</a>
+            </nav>
+            <button class="md:hidden text-slate-600 focus:outline-none">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </header>
+    <!-- Main Content Area -->
+    <main class="flex-1 max-w-[1440px] mx-auto w-full px-6 py-8">
+        <!-- Breadcrumbs & Header -->
+        <div class="mb-10">
+            <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-4">
+                <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+                <span class="material-symbols-outlined text-base">chevron_right</span>
+                <span class="font-medium text-slate-900 dark:text-white">Pharmaceutical Products</span>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight mb-2">
+                        Pharmaceutical Catalog</h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-lg">Browse our verified list of senior care
+                        medications, generic equivalents, and medical supplies.</p>
+                </div>
+                <!-- Search Bar -->
+                <div class="w-full md:w-auto md:min-w-[400px]">
+                    <div class="relative group">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span
+                                class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+                        </div>
+                        <input id="searchInput"
+                            class="block w-full pl-10 pr-3 py-3 border-none ring-1 ring-slate-200 dark:ring-slate-700 rounded-lg leading-5 bg-surface-light dark:bg-surface-dark placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary sm:text-sm shadow-sm transition-all"
+                            placeholder="Search by name, NDC, or manufacturer..." type="text" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Sidebar Filters -->
+            <aside class="w-full lg:w-72 shrink-0">
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 shadow-sm ring-1 ring-slate-200 dark:ring-slate-800 sticky top-24">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-slate-900 dark:text-white">Categories</h3>
+                        <button id="clearFilters" class="text-xs font-medium text-primary hover:text-primary-dark">Clear
+                            All</button>
+                    </div>
+                    <div class="space-y-1">
+                        <!-- Active Category: All -->
+                        <label
+                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer group transition-all">
+                            <div class="relative flex items-center">
+                                <input checked="" class="peer sr-only" name="category" type="radio" value="all" />
+                                <div
+                                    class="size-4 rounded-full border-2 border-slate-300 dark:border-slate-600 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+                                </div>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-slate-700 dark:text-slate-300 peer-checked:text-primary transition-colors">All
+                                Products</span>
+                        </label>
+                        <!-- Category: Cardiology -->
+                        <label
+                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer group transition-all">
+                            <div class="relative flex items-center">
+                                <input class="peer sr-only" name="category" type="radio" value="cardiology" />
+                                <div
+                                    class="size-4 rounded-full border-2 border-slate-300 dark:border-slate-600 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+                                </div>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-slate-700 dark:text-slate-300 peer-checked:text-primary transition-colors">Cardiology</span>
+                            <span
+                                class="ml-auto text-xs text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded-full">124</span>
+                        </label>
+                        <!-- Category: Diabetes -->
+                        <label
+                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer group transition-all">
+                            <div class="relative flex items-center">
+                                <input class="peer sr-only" name="category" type="radio" value="diabetes" />
+                                <div
+                                    class="size-4 rounded-full border-2 border-slate-300 dark:border-slate-600 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+                                </div>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-slate-700 dark:text-slate-300 peer-checked:text-primary transition-colors">Diabetes
+                                Care</span>
+                            <span
+                                class="ml-auto text-xs text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded-full">86</span>
+                        </label>
+                        <!-- Category: Antibiotics -->
+                        <label
+                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer group transition-all">
+                            <div class="relative flex items-center">
+                                <input class="peer sr-only" name="category" type="radio" value="antibiotics" />
+                                <div
+                                    class="size-4 rounded-full border-2 border-slate-300 dark:border-slate-600 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+                                </div>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-slate-700 dark:text-slate-300 peer-checked:text-primary transition-colors">Antibiotics</span>
+                            <span
+                                class="ml-auto text-xs text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded-full">45</span>
+                        </label>
+                        <!-- Category: Pain Management -->
+                        <label
+                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer group transition-all">
+                            <div class="relative flex items-center">
+                                <input class="peer sr-only" name="category" type="radio" value="pain" />
+                                <div
+                                    class="size-4 rounded-full border-2 border-slate-300 dark:border-slate-600 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+                                </div>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-slate-700 dark:text-slate-300 peer-checked:text-primary transition-colors">Pain
+                                Management</span>
+                            <span
+                                class="ml-auto text-xs text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded-full">92</span>
+                        </label>
+                        <!-- Category: Respiratory -->
+                        <label
+                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer group transition-all">
+                            <div class="relative flex items-center">
+                                <input class="peer sr-only" name="category" type="radio" value="respiratory" />
+                                <div
+                                    class="size-4 rounded-full border-2 border-slate-300 dark:border-slate-600 peer-checked:border-primary peer-checked:bg-primary transition-colors">
+                                </div>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-slate-700 dark:text-slate-300 peer-checked:text-primary transition-colors">Respiratory</span>
+                            <span
+                                class="ml-auto text-xs text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded-full">34</span>
+                        </label>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-700">
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-4">Availability</h3>
+                        <label class="flex items-center gap-3 mb-3 cursor-pointer">
+                            <input name="availability" value="in_stock"
+                                class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4"
+                                type="checkbox" />
+                            <span class="text-sm text-slate-600 dark:text-slate-300">In Stock</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input name="availability" value="low_stock"
+                                class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4"
+                                type="checkbox" />
+                            <span class="text-sm text-slate-600 dark:text-slate-300">Low Stock</span>
+                        </label>
+                    </div>
+                </div>
+            </aside>
+            <!-- Product Grid -->
+            <div class="flex-1">
+                <!-- Sorting & Count -->
+                <div class="flex items-center justify-between mb-6">
+                    <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Showing <span
+                            class="text-slate-900 dark:text-white font-bold" id="showingCount">6</span> products</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-sm text-slate-500 dark:text-slate-400">Sort by:</span>
+                        <select id="sortSelect"
+                            class="bg-transparent border-none text-sm font-semibold text-slate-900 dark:text-white focus:ring-0 cursor-pointer py-0 pl-0 pr-8">
+                            <option value="relevance">Relevance</option>
+                            <option value="name-asc">Name (A-Z)</option>
+                            <option value="price-asc">Price (Low-High)</option>
+                            <option value="price-desc">Price (High-Low)</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Grid -->
+                <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <!-- Product Card 1 -->
+                    <div data-name="Lipitor" data-category="cardiology" data-price="25.99" data-stock="in_stock"
+                        data-relevance="10"
+                        class="group bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ring-1 ring-slate-200 dark:ring-slate-800 relative overflow-hidden">
+                        <div class="absolute top-4 right-4 z-10">
+                            <span
+                                class="inline-flex items-center rounded-full bg-green-50 dark:bg-green-900/30 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-400 ring-1 ring-inset ring-green-600/20">In
+                                Stock</span>
+                        </div>
+                        <div
+                            class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-lg mb-4 overflow-hidden relative">
+                            <img alt="White medical pill bottles on a clean surface"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="assets/images/image-62246beb0e.jpg" />
+                        </div>
+                        <div class="space-y-2">
+                            <p class="text-xs font-semibold text-primary uppercase tracking-wide">Pfizer</p>
+                            <h3
+                                class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                Lipitor (Atorvastatin)</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">20mg Tablets, 90 Count
+                                Bottle. Used for lowering cholesterol levels in adults.</p>
+                            <div class="pt-4 flex items-center justify-between">
+                                <span class="text-sm font-medium text-slate-500 dark:text-slate-400">NDC:
+                                    0071-0156-23</span>
+                                <button
+                                    class="rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-900 dark:text-white p-2 transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div data-name="Metformin HCL" data-category="diabetes" data-price="12.50" data-stock="low_stock"
+                        data-relevance="9"
+                        class="group bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ring-1 ring-slate-200 dark:ring-slate-800 relative overflow-hidden">
+                        <div class="absolute top-4 right-4 z-10">
+                            <span
+                                class="inline-flex items-center rounded-full bg-yellow-50 dark:bg-yellow-900/30 px-2 py-1 text-xs font-medium text-yellow-800 dark:text-yellow-400 ring-1 ring-inset ring-yellow-600/20">Low
+                                Stock</span>
+                        </div>
+                        <div
+                            class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-lg mb-4 overflow-hidden relative">
+                            <img alt="Close up of various pharmaceutical pills in blister packs"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="assets/images/image-a136867347.jpg" />
+                        </div>
+                        <div class="space-y-2">
+                            <p class="text-xs font-semibold text-primary uppercase tracking-wide">Teva Pharmaceuticals
+                            </p>
+                            <h3
+                                class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                Metformin HCL</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">500mg ER Tablets, 100
+                                Count. First-line medication for the treatment of type 2 diabetes.</p>
+                            <div class="pt-4 flex items-center justify-between">
+                                <span class="text-sm font-medium text-slate-500 dark:text-slate-400">NDC:
+                                    0093-7212-01</span>
+                                <button
+                                    class="rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-900 dark:text-white p-2 transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div data-name="Lantus" data-category="diabetes" data-price="95.00" data-stock="in_stock"
+                        data-relevance="8"
+                        class="group bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ring-1 ring-slate-200 dark:ring-slate-800 relative overflow-hidden">
+                        <div class="absolute top-4 right-4 z-10">
+                            <span
+                                class="inline-flex items-center rounded-full bg-green-50 dark:bg-green-900/30 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-400 ring-1 ring-inset ring-green-600/20">In
+                                Stock</span>
+                        </div>
+                        <div
+                            class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-lg mb-4 overflow-hidden relative">
+                            <img alt="Medical syringe and vial on blue background"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="assets/images/image-a5f2e0b4c1.jpg" />
+                        </div>
+                        <div class="space-y-2">
+                            <p class="text-xs font-semibold text-primary uppercase tracking-wide">Sanofi</p>
+                            <h3
+                                class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                Lantus (Insulin Glargine)</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">100 Units/mL, 10mL Vial.
+                                Long-acting insulin for diabetes management.</p>
+                            <div class="pt-4 flex items-center justify-between">
+                                <span class="text-sm font-medium text-slate-500 dark:text-slate-400">NDC:
+                                    0088-2220-33</span>
+                                <button
+                                    class="rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-900 dark:text-white p-2 transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div data-name="Amoxicillin" data-category="antibiotics" data-price="8.99" data-stock="in_stock"
+                        data-relevance="7"
+                        class="group bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ring-1 ring-slate-200 dark:ring-slate-800 relative overflow-hidden">
+                        <div class="absolute top-4 right-4 z-10">
+                            <span
+                                class="inline-flex items-center rounded-full bg-green-50 dark:bg-green-900/30 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-400 ring-1 ring-inset ring-green-600/20">In
+                                Stock</span>
+                        </div>
+                        <div
+                            class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-lg mb-4 overflow-hidden relative">
+                            <img alt="Close up of white and red capsules spilling"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="assets/images/image-9a80a04119.jpg" />
+                        </div>
+                        <div class="space-y-2">
+                            <p class="text-xs font-semibold text-primary uppercase tracking-wide">Sandoz</p>
+                            <h3
+                                class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                Amoxicillin Capsules</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">500mg, 50 Count.
+                                Broad-spectrum antibiotic for bacterial infections.</p>
+                            <div class="pt-4 flex items-center justify-between">
+                                <span class="text-sm font-medium text-slate-500 dark:text-slate-400">NDC:
+                                    0781-2613-05</span>
+                                <button
+                                    class="rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-900 dark:text-white p-2 transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 5 -->
+                    <div data-name="Crestor" data-category="cardiology" data-price="45.00" data-stock="backorder"
+                        data-relevance="6"
+                        class="group bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ring-1 ring-slate-200 dark:ring-slate-800 relative overflow-hidden">
+                        <div class="absolute top-4 right-4 z-10">
+                            <span
+                                class="inline-flex items-center rounded-full bg-red-50 dark:bg-red-900/30 px-2 py-1 text-xs font-medium text-red-700 dark:text-red-400 ring-1 ring-inset ring-red-600/20">Backorder</span>
+                        </div>
+                        <div
+                            class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-lg mb-4 overflow-hidden relative">
+                            <img alt="Various prescription pills in plastic containers"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="assets/images/image-b866a7f682.jpg" />
+                        </div>
+                        <div class="space-y-2">
+                            <p class="text-xs font-semibold text-primary uppercase tracking-wide">AstraZeneca</p>
+                            <h3
+                                class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                Crestor (Rosuvastatin)</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">10mg Tablets, 90 Count.
+                                Statin medication used to prevent cardiovascular disease.</p>
+                            <div class="pt-4 flex items-center justify-between">
+                                <span class="text-sm font-medium text-slate-500 dark:text-slate-400">NDC:
+                                    0310-0751-90</span>
+                                <button
+                                    class="rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-900 dark:text-white p-2 transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 6 -->
+                    <div data-name="Advair" data-category="respiratory" data-price="120.00" data-stock="in_stock"
+                        data-relevance="5"
+                        class="group bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ring-1 ring-slate-200 dark:ring-slate-800 relative overflow-hidden">
+                        <div class="absolute top-4 right-4 z-10">
+                            <span
+                                class="inline-flex items-center rounded-full bg-green-50 dark:bg-green-900/30 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-400 ring-1 ring-inset ring-green-600/20">In
+                                Stock</span>
+                        </div>
+                        <div
+                            class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-lg mb-4 overflow-hidden relative">
+                            <img alt="Medical instruments stethoscope and pills on blue"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="assets/images/image-4564ef8cb2.jpg" />
+                        </div>
+                        <div class="space-y-2">
+                            <p class="text-xs font-semibold text-primary uppercase tracking-wide">GSK</p>
+                            <h3
+                                class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                Advair Diskus</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">250/50 mcg, 60 Blisters.
+                                Inhalation powder for asthma and COPD.</p>
+                            <div class="pt-4 flex items-center justify-between">
+                                <span class="text-sm font-medium text-slate-500 dark:text-slate-400">NDC:
+                                    0173-0696-00</span>
+                                <button
+                                    class="rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary text-slate-900 dark:text-white p-2 transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div id="pagination" class="mt-12 flex items-center justify-center gap-2">
+                    <!-- Dynamic Pagination Buttons will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-slate-800" id="contact">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 text-white font-bold text-xl mb-6">
+                        <img src="Senior Care Logo.svg" alt="Senior Care Logo" class="h-8 w-auto" />
+                        Senior Care
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 text-slate-400">
+                        Dedicated to raising healthcare standards by delivering quality products and advanced medical
+                        technologies
+                        across Yemen.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary-blue)] transition-colors text-white"
+                            href="#">
+                            <span class="font-bold text-xs">FB</span>
+                        </a>
+                        <a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary-blue)] transition-colors text-white"
+                            href="#">
+                            <span class="font-bold text-xs">LI</span>
+                        </a>
+                        <a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary-blue)] transition-colors text-white"
+                            href="#">
+                            <span class="font-bold text-xs">X</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a class="hover:text-[var(--primary-blue)] transition-colors" href="index.html">About
+                                Us</a></li>
+                        <li><a class="hover:text-[var(--primary-blue)] transition-colors" href="products.html">Our
+                                Work</a></li>
+                        <li><a class="hover:text-[var(--primary-blue)] transition-colors" href="our_team.html">Our
+                                Team</a></li>
+                        <li><a class="hover:text-[var(--primary-blue)] transition-colors"
+                                href="social_responsibility.html">CSR</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contact Us</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="material-symbols-outlined text-[var(--primary-blue)] text-lg">location_on</span>
+                            <span>22 May street,<br />Sanaa, Yemen</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[var(--primary-blue)] text-lg">call</span>
+                            <span>+967 773 557 006</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[var(--primary-blue)] text-lg">mail</span>
+                            <a class="hover:text-white transition-colors"
+                                href="mailto:info@seniorcare-ye.com">info@seniorcare-ye.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Stay Updated</h4>
+                    <p class="text-sm text-slate-400 mb-4">Subscribe to receive updates about our new products and
+                        initiatives.
+                    </p>
+                    <form class="flex gap-2">
+                        <input
+                            class="bg-slate-800 border-none rounded text-sm px-3 py-2 w-full focus:ring-1 focus:ring-[var(--primary-blue)]"
+                            placeholder="Your email" type="email" />
+                        <button
+                            class="bg-[var(--primary-blue)] text-white px-3 py-2 rounded hover:bg-sky-600 transition-colors">
+                            <span class="material-symbols-outlined text-sm">send</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
+                <p>© 2025 Senior Care. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Configuration
+            const ITEMS_PER_PAGE = 6;
+            let currentPage = 1;
+            let currentProducts = [];
+
+            // DOM Elements
+            const searchInput = document.getElementById('searchInput');
+            const categoryInputs = document.querySelectorAll('input[name="category"]');
+            const availabilityInputs = document.querySelectorAll('input[name="availability"]');
+            const sortSelect = document.getElementById('sortSelect');
+            const clearBtn = document.getElementById('clearFilters');
+            const productGrid = document.getElementById('productGrid');
+            const paginationContainer = document.getElementById('pagination');
+            const showingCount = document.getElementById('showingCount');
+            const totalCount = document.getElementById('totalCount');
+
+            // Initial Product Data (Simulated from DOM for filtering)
+            // We will add data-attributes to the HTML elements to make this work efficiently
+            // The script will read the initial state of the grid
+            let allProducts = Array.from(productGrid.children).map(el => ({
+                element: el,
+                name: el.getAttribute('data-name'),
+                category: el.getAttribute('data-category'),
+                stock: el.getAttribute('data-stock'), // in-stock, low-stock, backorder
+                price: parseFloat(el.getAttribute('data-price') || '0'),
+                relevance: parseInt(el.getAttribute('data-relevance') || '0')
+            }));
+
+            function filterProducts() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedCategory = document.querySelector('input[name="category"]:checked')?.value || 'all';
+
+                // Get checked availability filters
+                const stockFilters = Array.from(availabilityInputs)
+                    .filter(input => input.checked)
+                    .map(input => input.value);
+
+                currentProducts = allProducts.filter(product => {
+                    // Search
+                    const matchesSearch = product.name.toLowerCase().includes(searchTerm);
+
+                    // Category
+                    const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
+
+                    // Availability
+                    // If no availability filters are checked, show everything (or default logic)
+                    // Logic: If "In Stock" is checked, show in-stock. If "Low Stock" is checked, show that too.
+                    // If NOTHING is checked, usually we show everything.
+                    let matchesStock = true;
+                    if (stockFilters.length > 0) {
+                        matchesStock = stockFilters.includes(product.stock);
+                    }
+
+                    return matchesSearch && matchesCategory && matchesStock;
+                });
+
+                // Sort
+                const sortValue = sortSelect.value;
+                currentProducts.sort((a, b) => {
+                    if (sortValue === 'name-asc') return a.name.localeCompare(b.name);
+                    if (sortValue === 'price-asc') return a.price - b.price;
+                    if (sortValue === 'price-desc') return b.price - a.price;
+                    return a.relevance - b.relevance; // Default 'relevance'
+                });
+
+                updatePagination();
+            }
+
+            function updatePagination() {
+                const totalItems = currentProducts.length;
+                const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+                // Clamp current page
+                if (currentPage > totalPages) currentPage = Math.max(1, totalPages);
+                if (currentPage < 1) currentPage = 1;
+
+                // Update text counts
+                showingCount.textContent = totalItems > 0 ? totalItems : 0;
+                // totalCount.textContent = allProducts.length; // Optional: show total available
+
+                // Render Grid
+                productGrid.innerHTML = '';
+                const start = (currentPage - 1) * ITEMS_PER_PAGE;
+                const end = start + ITEMS_PER_PAGE;
+
+                const pageItems = currentProducts.slice(start, end);
+
+                if (pageItems.length === 0) {
+                    productGrid.innerHTML = `
+                        <div class="col-span-full py-12 text-center text-slate-500">
+                            <span class="material-symbols-outlined text-4xl mb-2">search_off</span>
+                            <p>No products found matching your filters.</p>
+                        </div>
+                   `;
+                } else {
+                    pageItems.forEach(item => productGrid.appendChild(item.element));
+                }
+
+                // Render Pagination Buttons
+                renderPagination(totalPages);
+            }
+
+            function renderPagination(totalPages) {
+                if (totalPages <= 1) {
+                    paginationContainer.innerHTML = '';
+                    return;
+                }
+
+                let btns = '';
+
+                // Prev
+                btns += `
+                    <button onclick="changePage(${currentPage - 1})" 
+                        class="flex items-center justify-center size-10 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors disabled:opacity-50"
+                        ${currentPage === 1 ? 'disabled' : ''}>
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                `;
+
+                // Simple visible pages logic (show simple 1,2..N or simplified)
+                // For simplicity in this demo, showing all if < 7, else abbreviated
+                for (let i = 1; i <= totalPages; i++) {
+                    if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                        const activeClass = i === currentPage
+                            ? 'bg-primary text-white shadow-md shadow-primary/20'
+                            : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800';
+
+                        btns += `<button onclick="changePage(${i})" class="flex items-center justify-center size-10 rounded-lg font-medium transition-colors ${activeClass}">${i}</button>`;
+                    } else if (i === currentPage - 2 || i === currentPage + 2) {
+                        btns += `<span class="text-slate-400 px-1">...</span>`;
+                    }
+                }
+
+                // Next
+                btns += `
+                    <button onclick="changePage(${currentPage + 1})" 
+                        class="flex items-center justify-center size-10 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors disabled:opacity-50"
+                        ${currentPage === totalPages ? 'disabled' : ''}>
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                `;
+
+                paginationContainer.innerHTML = btns;
+            }
+
+            // Expose changePage to window for onclick handlers
+            window.changePage = (page) => {
+                currentPage = page;
+                filterProducts();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            // Event Listeners
+            searchInput.addEventListener('input', () => { currentPage = 1; filterProducts(); });
+            sortSelect.addEventListener('change', filterProducts);
+            clearBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                // Reset categories to "all"
+                document.querySelector('input[name="category"][value="all"]').checked = true;
+                // Reset checkboxes
+                availabilityInputs.forEach(input => input.checked = false);
+                // Reset Sort
+                sortSelect.value = 'relevance';
+                currentPage = 1;
+                filterProducts();
+            });
+
+            categoryInputs.forEach(input => input.addEventListener('change', () => { currentPage = 1; filterProducts(); }));
+            availabilityInputs.forEach(input => input.addEventListener('change', () => { currentPage = 1; filterProducts(); }));
+
+            // Initial Filter Run
+            filterProducts();
+        });
+    </script>
+</body>
+
+</html>

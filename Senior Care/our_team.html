@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Our Team and Leadership - Senior Care Meds</title>
+    <script src="assets/js/tailwindcss.js"></script>
+    <link href="assets/css/alexandria.css" rel="stylesheet" />
+    <link href="assets/css/material-symbols.css" rel="stylesheet" />
+    <style type="text/tailwindcss">
+        :root {
+            --primary-blue: #42a09f;
+            --soft-blue: #f0fbfb;
+            --dark-blue: #1d5b5b;
+            --text-gray: #475569;
+            --white: #fff;
+        }
+        body {
+            font-family: "Alexandria", sans-serif;
+            color: var(--text-gray);
+            background-color: #f8fafc;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#42a09f", // var(--primary-blue)
+                        secondary: "#f0fbfb", // var(--soft-blue)
+                        dark: "#1d5b5b", // var(--dark-blue)
+                        "background-light": "#f8fafc",
+                        "surface-light": "#ffffff",
+                        "background-dark": "#f8fafc",
+                        "surface-dark": "#ffffff",
+                        "primary-dark": "#358281",
+                    },
+                    fontFamily: {
+                        sans: ["Alexandria", "sans-serif"],
+                        display: ["Alexandria", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="flex flex-col min-h-screen">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a class="flex items-center gap-2 text-[var(--dark-blue)] font-bold text-2xl tracking-tight"
+                href="index.html">
+                <img src="Senior Care Logo.svg" alt="Senior Care Logo" class="h-10 w-auto" />
+                Senior Care
+            </a>
+            <nav class="hidden md:flex gap-8">
+                <a class="text-slate-600 hover:text-[var(--primary-blue)] font-medium transition-colors"
+                    href="index.html">About Us</a>
+                <a class="text-slate-600 hover:text-[var(--primary-blue)] font-medium transition-colors"
+                    href="products.html">Our Work</a>
+                <a class="text-slate-600 hover:text-[var(--primary-blue)] font-medium transition-colors"
+                    href="our_team.html">Team</a>
+                <a class="text-slate-600 hover:text-[var(--primary-blue)] font-medium transition-colors"
+                    href="social_responsibility.html">CSR</a>
+            </nav>
+            <button class="md:hidden text-slate-600 focus:outline-none">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </header>
+    <main class="flex-1 max-w-[1440px] mx-auto w-full px-6 py-8">
+        <div class="mb-12 text-center md:text-left">
+            <div
+                class="flex items-center justify-center md:justify-start gap-2 text-sm text-slate-500 dark:text-slate-400 mb-6">
+                <a class="hover:text-primary transition-colors" href="#">Home</a>
+                <span class="material-symbols-outlined text-base">chevron_right</span>
+                <a class="hover:text-primary transition-colors" href="#">About Us</a>
+                <span class="material-symbols-outlined text-base">chevron_right</span>
+                <span class="font-medium text-slate-900 dark:text-white">Our Team</span>
+            </div>
+            <div class="max-w-4xl mx-auto md:mx-0">
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight mb-4">Dedicated
+                    to Care</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-lg md:text-xl leading-relaxed max-w-3xl">
+                    Behind every delivery and every consultation is a team of passionate experts committed to improving
+                    senior healthcare. We bridge the gap between pharmaceutical innovation and compassionate care
+                    delivery.
+                </p>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div
+                class="group bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-1 ring-slate-200 dark:ring-slate-800 flex flex-col items-center text-center">
+                <div class="relative mb-6">
+                    <div
+                        class="size-32 rounded-full overflow-hidden ring-4 ring-slate-50 dark:ring-slate-800 group-hover:ring-primary/20 transition-all duration-300">
+                        <img alt="Portrait of CEO" class="w-full h-full object-cover"
+                            src="assets/images/image-aab3b4ca25.jpg" />
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-0 bg-white dark:bg-surface-dark rounded-full p-1.5 shadow-md border border-slate-100 dark:border-slate-700">
+                        <img alt="LinkedIn" class="size-5 rounded sm:grayscale group-hover:grayscale-0 transition-all"
+                            src="assets/images/image-792157070b.jpg" />
+                    </div>
+                </div>
+                <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-4">Chief Executive Officer</p>
+                <button onclick="openModal(this)" data-name="Dr. Khaled Swailem" data-role="Chief Executive Officer"
+                    data-desc="With over 20 years in healthcare administration, Youssef leads our mission with a focus on integrity and patient-centered logistics."
+                    data-img="assets/images/image-aab3b4ca25.jpg"
+                    class="mt-auto text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary flex items-center gap-1 group/link cursor-pointer bg-transparent border-none p-0"
+                    type="button">
+                    View Profile
+                    <span
+                        class="material-symbols-outlined text-base group-hover/link:translate-x-0.5 transition-transform">arrow_forward</span>
+                </button>
+            </div>
+            <div
+                class="group bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-1 ring-slate-200 dark:ring-slate-800 flex flex-col items-center text-center">
+                <div class="relative mb-6">
+                    <div
+                        class="size-32 rounded-full overflow-hidden ring-4 ring-slate-50 dark:ring-slate-800 group-hover:ring-primary/20 transition-all duration-300">
+                        <img alt="Portrait of Medical Consultant" class="w-full h-full object-cover"
+                            src="assets/images/image-2758e86a15.jpg" />
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-0 bg-white dark:bg-surface-dark rounded-full p-1.5 shadow-md border border-slate-100 dark:border-slate-700">
+                        <img alt="LinkedIn" class="size-5 rounded sm:grayscale group-hover:grayscale-0 transition-all"
+                            src="assets/images/image-579ed631bd.jpg" />
+                    </div>
+                </div>
+                <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-4">Chief Medical Consultant</p>
+                <button onclick="openModal(this)" data-name="Dr. Noor Al-Amri, PharmD"
+                    data-role="Chief Medical Consultant"
+                    data-desc="Layla ensures all our distributed products meet the highest clinical standards and provides expert guidance on formulary management."
+                    data-img="assets/images/image-2758e86a15.jpg"
+                    class="mt-auto text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary flex items-center gap-1 group/link cursor-pointer bg-transparent border-none p-0"
+                    type="button">
+                    View Profile
+                    <span
+                        class="material-symbols-outlined text-base group-hover/link:translate-x-0.5 transition-transform">arrow_forward</span>
+                </button>
+            </div>
+            <div
+                class="group bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-1 ring-slate-200 dark:ring-slate-800 flex flex-col items-center text-center">
+                <div class="relative mb-6">
+                    <div
+                        class="size-32 rounded-full overflow-hidden ring-4 ring-slate-50 dark:ring-slate-800 group-hover:ring-primary/20 transition-all duration-300">
+                        <img alt="Portrait of Head of Logistics" class="w-full h-full object-cover"
+                            src="assets/images/image-38acfc661f.jpg" />
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-0 bg-white dark:bg-surface-dark rounded-full p-1.5 shadow-md border border-slate-100 dark:border-slate-700">
+                        <img alt="LinkedIn" class="size-5 rounded sm:grayscale group-hover:grayscale-0 transition-all"
+                            src="assets/images/image-87877a623e.jpg" />
+                    </div>
+                </div>
+                <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-4">Head of Logistics</p>
+                <button onclick="openModal(this)" data-name="Omar Al-Sayed" data-role="Head of Logistics"
+                    data-desc="Expert in supply chain efficiency, Omar guarantees that critical medications reach facilities on time, every time."
+                    data-img="assets/images/image-38acfc661f.jpg"
+                    class="mt-auto text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary flex items-center gap-1 group/link cursor-pointer bg-transparent border-none p-0"
+                    type="button">
+                    View Profile
+                    <span
+                        class="material-symbols-outlined text-base group-hover/link:translate-x-0.5 transition-transform">arrow_forward</span>
+                </button>
+            </div>
+            <div
+                class="group bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-1 ring-slate-200 dark:ring-slate-800 flex flex-col items-center text-center">
+                <div class="relative mb-6">
+                    <div
+                        class="size-32 rounded-full overflow-hidden ring-4 ring-slate-50 dark:ring-slate-800 group-hover:ring-primary/20 transition-all duration-300">
+                        <img alt="Portrait of Client Relations" class="w-full h-full object-cover"
+                            src="assets/images/image-895fca4cd5.jpg" />
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-0 bg-white dark:bg-surface-dark rounded-full p-1.5 shadow-md border border-slate-100 dark:border-slate-700">
+                        <img alt="LinkedIn" class="size-5 rounded sm:grayscale group-hover:grayscale-0 transition-all"
+                            src="assets/images/image-4e0beb70e6.jpg" />
+                    </div>
+                </div>
+                <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-4">Director of Client Relations
+                </p>
+                <button onclick="openModal(this)" data-name="Ali Al-Wazir" data-role="Director of Client Relations"
+                    data-desc="Fatima is the voice of our partners, ensuring seamless communication and tailored support for every senior care facility we serve."
+                    data-img="assets/images/image-895fca4cd5.jpg"
+                    class="mt-auto text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary flex items-center gap-1 group/link cursor-pointer bg-transparent border-none p-0"
+                    type="button">
+                    View Profile
+                    <span
+                        class="material-symbols-outlined text-base group-hover/link:translate-x-0.5 transition-transform">arrow_forward</span>
+                </button>
+            </div>
+            <div
+                class="group bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-1 ring-slate-200 dark:ring-slate-800 flex flex-col items-center text-center">
+                <div class="relative mb-6">
+                    <div
+                        class="size-32 rounded-full overflow-hidden ring-4 ring-slate-50 dark:ring-slate-800 group-hover:ring-primary/20 transition-all duration-300">
+                        <img alt="Portrait of Tech Lead" class="w-full h-full object-cover"
+                            src="assets/images/image-c4505594cf.jpg" />
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-0 bg-white dark:bg-surface-dark rounded-full p-1.5 shadow-md border border-slate-100 dark:border-slate-700">
+                        <img alt="LinkedIn" class="size-5 rounded sm:grayscale group-hover:grayscale-0 transition-all"
+                            src="assets/images/image-9d37af8126.jpg" />
+                    </div>
+                </div>
+                <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-4">VP of Technology</p>
+                <button onclick="openModal(this)" data-name="Sami Al-Najjar" data-role="VP of Technology"
+                    data-desc="Driving innovation in pharmaceutical tracking systems to enhance transparency and security across our entire network."
+                    data-img="assets/images/image-c4505594cf.jpg"
+                    class="mt-auto text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary flex items-center gap-1 group/link cursor-pointer bg-transparent border-none p-0"
+                    type="button">
+                    View Profile
+                    <span
+                        class="material-symbols-outlined text-base group-hover/link:translate-x-0.5 transition-transform">arrow_forward</span>
+                </button>
+            </div>
+            <div
+                class="group bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-1 ring-slate-200 dark:ring-slate-800 flex flex-col items-center text-center">
+                <div class="relative mb-6">
+                    <div
+                        class="size-32 rounded-full overflow-hidden ring-4 ring-slate-50 dark:ring-slate-800 group-hover:ring-primary/20 transition-all duration-300">
+                        <img alt="Portrait of Compliance Officer" class="w-full h-full object-cover"
+                            src="assets/images/image-9ce43e618b.jpg" />
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-0 bg-white dark:bg-surface-dark rounded-full p-1.5 shadow-md border border-slate-100 dark:border-slate-700">
+                        <img alt="LinkedIn" class="size-5 rounded sm:grayscale group-hover:grayscale-0 transition-all"
+                            src="assets/images/image-2f6b0e6083.jpg" />
+                    </div>
+                </div>
+                <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-4">Regulatory Compliance</p>
+                <button onclick="openModal(this)" data-name="Asser Al-Qadi" data-role="Regulatory Compliance"
+                    data-desc="Huda oversees our adherence to FDA regulations and state laws, ensuring every operation is compliant and safe."
+                    data-img="assets/images/image-9ce43e618b.jpg"
+                    class="mt-auto text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary flex items-center gap-1 group/link cursor-pointer bg-transparent border-none p-0"
+                    type="button">
+                    View Profile
+                    <span
+                        class="material-symbols-outlined text-base group-hover/link:translate-x-0.5 transition-transform">arrow_forward</span>
+                </button>
+            </div>
+            <div
+                class="group bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ring-1 ring-slate-200 dark:ring-slate-800 flex flex-col items-center text-center">
+                <div class="relative mb-6">
+                    <div
+                        class="size-32 rounded-full overflow-hidden ring-4 ring-slate-50 dark:ring-slate-800 group-hover:ring-primary/20 transition-all duration-300">
+                        <img alt="Portrait of Operations Manager" class="w-full h-full object-cover"
+                            src="assets/images/image-1e5ba5845c.jpg" />
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-0 bg-white dark:bg-surface-dark rounded-full p-1.5 shadow-md border border-slate-100 dark:border-slate-700">
+                        <img alt="LinkedIn" class="size-5 rounded sm:grayscale group-hover:grayscale-0 transition-all"
+                            src="assets/images/image-9e8aa0a0e4.jpg" />
+                    </div>
+                </div>
+                <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-4">Operations Director</p>
+                <button onclick="openModal(this)" data-name="Khaled Al-Awlaqi" data-role="Operations Director"
+                    data-desc="Streamlining our warehouse operations to maintain the highest levels of inventory accuracy and order fulfillment speed."
+                    data-img="assets/images/image-1e5ba5845c.jpg"
+                    class="mt-auto text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary flex items-center gap-1 group/link cursor-pointer bg-transparent border-none p-0"
+                    type="button">
+                    View Profile
+                    <span
+                        class="material-symbols-outlined text-base group-hover/link:translate-x-0.5 transition-transform">arrow_forward</span>
+                </button>
+            </div>
+            <div
+                class="group bg-slate-50 dark:bg-slate-800/50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 ring-1 ring-slate-200 dark:ring-slate-800 flex flex-col items-center justify-center text-center border-dashed border-2 border-slate-300 dark:border-slate-700">
+                <div
+                    class="size-20 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-6 text-slate-400 dark:text-slate-500">
+                    <span class="material-symbols-outlined text-4xl">group_add</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Join Our Team</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                    We are always looking for dedicated professionals to join our mission of improving senior care.
+                </p>
+                <button onclick="openPositionsModal()"
+                    class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-primary hover:bg-primary-dark rounded-lg transition-colors cursor-pointer border-none"
+                    type="button">
+                    View Open Positions
+                </button>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-slate-800" id="contact">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                <div class="flex items-center gap-2 text-white font-bold text-xl mb-6">
+            <img src="Senior Care Logo.svg" alt="Senior Care Logo" class="h-8 w-auto" />
+            Senior Care
+          </div>
+                    <p class="text-sm leading-relaxed mb-6 text-slate-400">
+                        Dedicated to raising healthcare standards by delivering quality products and advanced medical
+                        technologies
+                        across Yemen.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary-blue)] transition-colors text-white"
+                            href="#">
+                            <span class="font-bold text-xs">FB</span>
+                        </a>
+                        <a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary-blue)] transition-colors text-white"
+                            href="#">
+                            <span class="font-bold text-xs">LI</span>
+                        </a>
+                        <a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[var(--primary-blue)] transition-colors text-white"
+                            href="#">
+                            <span class="font-bold text-xs">X</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a class="hover:text-[var(--primary-blue)] transition-colors" href="index.html">About
+                                Us</a></li>
+                        <li><a class="hover:text-[var(--primary-blue)] transition-colors" href="products.html">Our
+                                Work</a></li>
+                        <li><a class="hover:text-[var(--primary-blue)] transition-colors" href="our_team.html">Our
+                                Team</a></li>
+                        <li><a class="hover:text-[var(--primary-blue)] transition-colors"
+                                href="social_responsibility.html">CSR</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contact Us</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="material-symbols-outlined text-[var(--primary-blue)] text-lg">location_on</span>
+                            <span>22 May street,<br />Sanaa, Yemen</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[var(--primary-blue)] text-lg">call</span>
+                            <span>+967 773 557 006</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[var(--primary-blue)] text-lg">mail</span>
+                            <a class="hover:text-white transition-colors"
+                                href="mailto:info@seniorcare-ye.com">info@seniorcare-ye.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Stay Updated</h4>
+                    <p class="text-sm text-slate-400 mb-4">Subscribe to receive updates about our new products and
+                        initiatives.
+                    </p>
+                    <form class="flex gap-2">
+                        <input
+                            class="bg-slate-800 border-none rounded text-sm px-3 py-2 w-full focus:ring-1 focus:ring-[var(--primary-blue)]"
+                            placeholder="Your email" type="email" />
+                        <button
+                            class="bg-[var(--primary-blue)] text-white px-3 py-2 rounded hover:bg-sky-600 transition-colors">
+                            <span class="material-symbols-outlined text-sm">send</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
+                <p>© 2025 Senior Care. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Team Member Modal -->
+    <div id="teamModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm transition-opacity opacity-0" id="modalBackdrop">
+        </div>
+
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                <!-- Modal Panel -->
+                <div class="relative transform overflow-hidden rounded-2xl bg-white dark:bg-slate-900 text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    id="modalPanel">
+
+                    <!-- Close Button -->
+                    <button onclick="closeModal()"
+                        class="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-slate-400 hover:text-slate-500 focus:outline-none">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+
+                    <div class="flex flex-col">
+                        <!-- Image Header -->
+                        <div class="relative h-48 bg-slate-100 dark:bg-slate-800">
+                            <div class="absolute -bottom-16 left-1/2 -translate-x-1/2">
+                                <div
+                                    class="size-32 rounded-full ring-4 ring-white dark:ring-slate-900 overflow-hidden bg-white">
+                                    <img id="modalImg" src="" alt="Team Member" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent"></div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="px-6 pb-8 pt-20 text-center">
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2" id="modalName">Name</h3>
+                            <p class="text-primary font-semibold text-sm uppercase tracking-wider mb-6" id="modalRole">
+                                Role</p>
+
+                            <div class="max-w-sm mx-auto">
+                                <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base" id="modalDesc">
+                                    Description goes here.
+                                </p>
+                            </div>
+
+                            <!-- Social Links (Static for demo) -->
+                            <div class="mt-8 flex justify-center gap-4">
+                                <a href="#"
+                                    class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:bg-primary hover:text-white transition-colors">
+                                    <span class="font-bold text-xs">LI</span>
+                                </a>
+                                <a href="#"
+                                    class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:bg-primary hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined text-lg">mail</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Open Positions Modal -->
+    <div id="positionsModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm transition-opacity opacity-0" id="posModalBackdrop">
+        </div>
+
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                <!-- Modal Panel -->
+                <div class="relative transform overflow-hidden rounded-2xl bg-white dark:bg-slate-900 text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    id="posModalPanel">
+
+                    <!-- Close Button -->
+                    <button onclick="closePositionsModal()"
+                        class="absolute right-4 top-4 z-10 rounded-full bg-slate-100 dark:bg-slate-800 p-2 text-slate-400 hover:text-slate-500 focus:outline-none transition-colors">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+
+                    <div class="p-6 sm:p-10">
+                        <div class="text-center mb-8">
+                            <div
+                                class="inline-flex items-center justify-center size-16 rounded-full bg-primary/10 text-primary mb-4">
+                                <span class="material-symbols-outlined text-3xl">work</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Current Openings</h3>
+                            <p class="text-slate-500 dark:text-slate-400 mt-2">Join us in making a difference in senior
+                                healthcare.</p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <!-- Job Item 1 -->
+                            <div
+                                class="group border border-slate-200 dark:border-slate-700 rounded-xl p-4 hover:border-primary/50 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all cursor-pointer">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h4
+                                            class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                            Senior Pharmacist</h4>
+                                        <div
+                                            class="flex items-center gap-3 mt-1 text-xs text-slate-500 dark:text-slate-400">
+                                            <span class="flex items-center gap-1"><span
+                                                    class="material-symbols-outlined text-sm">location_on</span> Sanaa,
+                                                Yemen</span>
+                                            <span class="flex items-center gap-1"><span
+                                                    class="material-symbols-outlined text-sm">schedule</span>
+                                                Full-time</span>
+                                        </div>
+                                    </div>
+                                    <span
+                                        class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_forward</span>
+                                </div>
+                            </div>
+
+                            <!-- Job Item 2 -->
+                            <div
+                                class="group border border-slate-200 dark:border-slate-700 rounded-xl p-4 hover:border-primary/50 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all cursor-pointer">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h4
+                                            class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                            Supply Chain Analyst</h4>
+                                        <div
+                                            class="flex items-center gap-3 mt-1 text-xs text-slate-500 dark:text-slate-400">
+                                            <span class="flex items-center gap-1"><span
+                                                    class="material-symbols-outlined text-sm">location_on</span> Aden,
+                                                Yemen</span>
+                                            <span class="flex items-center gap-1"><span
+                                                    class="material-symbols-outlined text-sm">schedule</span>
+                                                Full-time</span>
+                                        </div>
+                                    </div>
+                                    <span
+                                        class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_forward</span>
+                                </div>
+                            </div>
+
+                            <!-- Job Item 3 -->
+                            <div
+                                class="group border border-slate-200 dark:border-slate-700 rounded-xl p-4 hover:border-primary/50 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all cursor-pointer">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h4
+                                            class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                            Medical Sales Representative</h4>
+                                        <div
+                                            class="flex items-center gap-3 mt-1 text-xs text-slate-500 dark:text-slate-400">
+                                            <span class="flex items-center gap-1"><span
+                                                    class="material-symbols-outlined text-sm">location_on</span> Remote
+                                                / Field</span>
+                                            <span class="flex items-center gap-1"><span
+                                                    class="material-symbols-outlined text-sm">schedule</span>
+                                                Contract</span>
+                                        </div>
+                                    </div>
+                                    <span
+                                        class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 text-center">
+                            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Don't see a fitting role? Send us
+                                your resume.</p>
+                            <a href="mailto:careers@seniorcare-ye.com"
+                                class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-primary bg-primary/10 hover:bg-primary hover:text-white rounded-lg transition-all">
+                                Email Custom Application
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Existing Team Member Modal Logic
+        const modal = document.getElementById('teamModal');
+        const backdrop = document.getElementById('modalBackdrop');
+        const panel = document.getElementById('modalPanel');
+        const modalName = document.getElementById('modalName');
+        const modalRole = document.getElementById('modalRole');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalImg = document.getElementById('modalImg');
+
+        function openModal(button) {
+            // Populate data
+            modalName.textContent = button.getAttribute('data-name');
+            modalRole.textContent = button.getAttribute('data-role');
+            modalDesc.textContent = button.getAttribute('data-desc');
+            modalImg.src = button.getAttribute('data-img');
+
+            // Show modal
+            modal.classList.remove('hidden');
+
+            // Animate in
+            // Use setTimeout to ensure the browser has processed the removal of 'hidden' class
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                panel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            }, 10);
+        }
+
+        function closeModal() {
+            // Animate out
+            backdrop.classList.add('opacity-0');
+            panel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+
+            // Hide after animation matches transition duration (300ms)
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Close on clicking backdrop
+        backdrop.addEventListener('click', closeModal);
+
+        // --- NEW: Open Positions Modal Logic ---
+        const posModal = document.getElementById('positionsModal');
+        const posBackdrop = document.getElementById('posModalBackdrop');
+        const posPanel = document.getElementById('posModalPanel');
+
+        function openPositionsModal() {
+            posModal.classList.remove('hidden');
+            setTimeout(() => {
+                posBackdrop.classList.remove('opacity-0');
+                posPanel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            }, 10);
+        }
+
+        function closePositionsModal() {
+            posBackdrop.classList.add('opacity-0');
+            posPanel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            setTimeout(() => {
+                posModal.classList.add('hidden');
+            }, 300);
+        }
+
+        if (posBackdrop) {
+            posBackdrop.addEventListener('click', closePositionsModal);
+        }
+
+        // Universal Escape Key Handler
+        document.addEventListener('keydown', function (event) {
+            if (event.key === "Escape") {
+                if (!modal.classList.contains('hidden')) closeModal();
+                if (posModal && !posModal.classList.contains('hidden')) closePositionsModal();
+            }
+        });
+    </script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>
